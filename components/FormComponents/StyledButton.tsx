@@ -7,7 +7,12 @@ const StyledButtonComponent = styled(Button)`
   padding: 1rem 2rem;
 `;
 
-export default function StyledButton({ children, ...props }) {
+export default function StyledButton({
+  children,
+  ...props
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <StyledButtonComponent variant="contained" {...props}>
       {children}
