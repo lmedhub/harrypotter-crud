@@ -42,10 +42,11 @@ type Props = {
 
 const AllCharacters: React.FC<Props> = (props) => {
   const { t } = useTranslation();
+  const { initialCharacters, session } = props;
+
   const [selectedOption, setSelectedOption] = useState("all");
-  const [characters, setCharacters] = useState<CharacterProps[]>(
-    props.initialCharacters
-  );
+  const [characters, setCharacters] =
+    useState<CharacterProps[]>(initialCharacters);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,7 +74,7 @@ const AllCharacters: React.FC<Props> = (props) => {
     fetchData();
   }, [selectedOption]);
 
-  if (!props.session) {
+  if (!session) {
     return <UnauthorizedPage />;
   }
 
