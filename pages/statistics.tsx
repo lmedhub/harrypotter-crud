@@ -30,7 +30,9 @@ export const getServerSideProps = async (context) => {
   };
 };
 
-const Statistics = ({ housesCount, session }) => {
+const Statistics = (props) => {
+  const { housesCount, session } = props;
+
   const { t } = useTranslation();
 
   const getChartData = (data) => {
