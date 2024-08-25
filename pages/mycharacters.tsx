@@ -2,7 +2,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import prisma from "../lib/prisma";
-import { getSession } from "next-auth/react";
+import { getSession, GetSessionParams } from "next-auth/react";
 import UnauthorizedPage from "../components/Unauthorized";
 import { Session } from "next-auth";
 import { useTranslation } from "react-i18next";
@@ -11,12 +11,12 @@ import EmptyData from "../components/EmptyData";
 import CharacterList from "../components/CharacterList";
 import { CharacterProps } from "../types";
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (context: GetSessionParams) => {
   const session = await getSession(context);
 
   const myFavorites = await prisma.favoriteCharacter.findMany({
     where: {
-      authorId: session.user?.id,
+      authorId: session?.user?.id,
     },
   });
 

@@ -12,12 +12,14 @@ import Layout from "../components/Layout";
 import { Box, Typography } from "@mui/material";
 import PageHeader from "../components/PageHeader";
 import UnauthorizedPage from "../components/Unauthorized";
-import { getSession } from "next-auth/react";
+import { getSession, GetSessionParams } from "next-auth/react";
 import { useTranslation } from "react-i18next";
+import { ChartData, HouseCount } from "../types";
+import { Session } from "next-auth";
 
 Chart.register(BarElement, CategoryScale, LinearScale, ArcElement);
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (context: GetSessionParams) => {
   const session = await getSession(context);
 
   const housesCount = await prisma.favoriteCharacter.groupBy({
@@ -30,12 +32,12 @@ export const getServerSideProps = async (context) => {
   };
 };
 
-const Statistics = (props) => {
+const Statistics = (props: { housesCount: HouseCount[]; session: Session }) => {
   const { housesCount, session } = props;
 
   const { t } = useTranslation();
 
-  const getChartData = (data) => {
+  const getChartData = (data: HouseCount[]): ChartData => {
     const labels = data.map((entry) => entry.house).filter((label) => label);
     const counts = data.map((entry) => entry._count);
 
@@ -57,7 +59,7 @@ const Statistics = (props) => {
     };
   };
 
-  const renderChart = (data, title) => {
+  const renderChart = (data: HouseCount[], title: string): JSX.Element => {
     const chartData = getChartData(data);
 
     return (

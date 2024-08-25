@@ -2,6 +2,7 @@ import { Card, Grid, Typography } from "@mui/material";
 import React from "react";
 import styled from "@emotion/styled";
 import Character from "./Character";
+import { CharacterProps } from "../types";
 
 const StyledCharacterContainer = styled("div")`
   .character {
@@ -9,11 +10,15 @@ const StyledCharacterContainer = styled("div")`
   }
 `;
 
-export default function CharacterList({ characters }) {
+type CharacterListProps = {
+  characters: CharacterProps[];
+};
+
+export default function CharacterList({ characters }: CharacterListProps) {
   return (
     <StyledCharacterContainer>
       <Grid container spacing={3}>
-        {characters.map((character) => (
+        {characters.map((character: CharacterProps) => (
           <Grid item key={character.id} xs={12} sm={6} md={6} lg={3}>
             <Card className="character">
               <Character character={character} />

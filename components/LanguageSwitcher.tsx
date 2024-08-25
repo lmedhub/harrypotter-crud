@@ -6,7 +6,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
 import LanguageIcon from "@mui/icons-material/Language";
 
@@ -15,7 +15,7 @@ export default function LanguageSwitcher() {
   const [open, setOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
 
-  const changeLanguage = (lng) => {
+  const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setOpen(false);
   };
@@ -28,7 +28,7 @@ export default function LanguageSwitcher() {
     setOpen(false);
   };
 
-  const handleLanguageChange = (event) => {
+  const handleLanguageChange = (event: SelectChangeEvent<string>) => {
     setSelectedLanguage(event.target.value);
   };
 

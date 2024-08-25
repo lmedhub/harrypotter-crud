@@ -7,7 +7,7 @@ import {
   Radio,
   Box,
 } from "@mui/material";
-import { getSession } from "next-auth/react";
+import { getSession, GetSessionParams } from "next-auth/react";
 import UnauthorizedPage from "../components/Unauthorized";
 import { Session } from "next-auth";
 import { useTranslation } from "react-i18next";
@@ -16,14 +16,14 @@ import EmptyData from "../components/EmptyData";
 import CharacterList from "../components/CharacterList";
 import { CharacterProps } from "../types";
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (context: GetSessionParams) => {
   const session = await getSession(context);
 
   // Default fetch to all characters
   const response = await fetch("https://hp-api.onrender.com/api/characters");
   const characters = await response.json();
 
-  const allCharacters = characters.map((character) => ({
+  const allCharacters = characters.map((character: CharacterProps) => ({
     id: character.id,
     name: character.name,
     house: character.house,
@@ -42,10 +42,11 @@ type Props = {
 
 const AllCharacters: React.FC<Props> = (props) => {
   const { t } = useTranslation();
+  const { initialCharacters, session } = props;
+
   const [selectedOption, setSelectedOption] = useState("all");
-  const [characters, setCharacters] = useState<CharacterProps[]>(
-    props.initialCharacters
-  );
+  const [characters, setCharacters] =
+    useState<CharacterProps[]>(initialCharacters);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,7 +74,7 @@ const AllCharacters: React.FC<Props> = (props) => {
     fetchData();
   }, [selectedOption]);
 
-  if (!props.session) {
+  if (!session) {
     return <UnauthorizedPage />;
   }
 

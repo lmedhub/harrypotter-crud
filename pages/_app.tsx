@@ -6,7 +6,7 @@ import { ErrorBoundary } from "../providers/errorBoundary";
 import ErrorFallback from "../components/Error";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const AnyComponent = Component as any;
+  const AnyComponent = Component;
 
   return (
     <SessionProvider session={pageProps.session}>

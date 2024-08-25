@@ -12,3 +12,16 @@ export type CharacterProps = {
     image: string;
   };
   
+  export type HouseCount = {
+    house: string;
+    _count: number;
+  }
+
+  export type ChartData = {
+    labels: string[];
+    datasets: {
+      label: string;
+      data: number[];
+      backgroundColor: string[];
+    }[];
+  }
