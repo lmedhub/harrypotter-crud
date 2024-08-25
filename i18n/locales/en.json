@@ -1,0 +1,54 @@
+{
+  "mycharacters": "Favorite characters",
+  "myfavorites": "My favorites",
+  "allcharacters": "All characters",
+  "harrycharacters": "Harry Potter Characters",
+  "students": "Students",
+  "staff": "Staff",
+  
+  "name": "Name",
+  "house": "House",
+  "species": "Species",
+  "dateOfBirth": "Date of Birth",
+  "actor": "Actor",
+  "patronus": "Patronus",
+  "ancestry": "Ancestry",
+  "alive": "Alive",
+  
+  "unknown": "Unknown",
+
+  "delete": "Delete",
+  "edit": "Edit",
+  "favorite": "Favorite",
+  "unfavorite": "Unfavorite",
+
+  "cancel": "Cancel",
+  "characterdetails": "Character details",
+  
+  "help": "Help",
+
+  "language": "English",
+  "languageButton": "Language",
+  "selectLanguage": "Select language",
+  "changethemebutton": "Change theme",
+
+  "favhouse": "Favorite house",
+  "selectHouse": "Select house",
+
+
+  "somethingwrong": "Something went wrong",
+  "contactsupport": "Please contact support",
+  
+  "unauthorized": "Unauthorized Access",
+  "needauth": "You don't have authorization to access this page.",
+  "backbutton": "Go back",
+
+  "characterstats": "Character statistics",
+  "housecounts": "House Counting",
+  "statsbutton": "Statistics",
+
+  "nodatadisplay": "There is nothing to display at the moment.",
+  "nodata": "No items available",
+  "noimage": "No image available"
+
+}

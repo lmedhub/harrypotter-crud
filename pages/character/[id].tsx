@@ -10,6 +10,7 @@ import Image from "next/image";
 import { styled } from "@mui/system";
 import { set } from "cypress/types/lodash";
 import { CharacterProps } from "../../types";
+import UnauthorizedPage from "../../components/Unauthorized";
 
 const CharacterContainer = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -75,6 +76,10 @@ const CharacterPage: React.FC<Props> = (props) => {
     }
   }, [character.id]);
 
+  if (!session) {
+    return <UnauthorizedPage />;
+  }
+
   const handleFavoriteToggle = async () => {
     setIsCheckingFavorited(true);
     const response = await fetch(`/api/character/${character.id}`, {
@@ -137,7 +142,11 @@ const CharacterPage: React.FC<Props> = (props) => {
           {isCheckingFavorited ? (
             <CircularProgress />
           ) : (
-            <Button variant="contained" color="secondary" onClick={handleFavoriteToggle}>
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={handleFavoriteToggle}
+            >
               {isFavorited ? t("unfavorite") : t("favorite")}
             </Button>
           )}

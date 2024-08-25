@@ -1,14 +1,13 @@
 import React from "react";
 import Router from "next/router";
-import { Box, Card, Paper, Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import styled from "@emotion/styled";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import { CharacterProps } from "../types";
 import EmptyData from "./EmptyData";
-import { AspectRatio } from "@mui/icons-material";
 
-const StyledCharacterCard = styled(Paper)`
+const StyledCharacterCard = styled(Card)`
   && {
     padding: 2rem;
     cursor: pointer;
@@ -18,6 +17,13 @@ const StyledCharacterCard = styled(Paper)`
     align-items: center;
     justify-content: center;
   }
+`;
+
+const StyledImageContainer = styled(Box)`
+  width: 200px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
 `;
 
 const Character: React.FC<{ character: CharacterProps }> = ({ character }) => {
@@ -35,14 +41,7 @@ const Character: React.FC<{ character: CharacterProps }> = ({ character }) => {
       <Typography variant="subtitle1">
         {t("house")}: {character.house || t("unknown")}
       </Typography>
-      <Box
-        sx={{
-          width: "200px",
-          height: "250px",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
+      <StyledImageContainer>
         {character.image ? (
           <Image
             loader={() => character.image}
@@ -63,7 +62,7 @@ const Character: React.FC<{ character: CharacterProps }> = ({ character }) => {
             }}
           />
         )}
-      </Box>
+      </StyledImageContainer>
     </StyledCharacterCard>
   );
 };
