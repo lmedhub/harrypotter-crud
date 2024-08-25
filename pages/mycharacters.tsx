@@ -32,19 +32,20 @@ type Props = {
 
 const MyCharacters: React.FC<Props> = (props) => {
   const { t } = useTranslation();
+  const { myFavorites, session } = props;
 
-  if (!props.session) {
+  if (!session) {
     return <UnauthorizedPage />;
   }
 
-  if (props.myFavorites.length === 0) {
+  if (myFavorites.length === 0) {
     return <EmptyData />;
   }
 
   return (
     <Layout>
       <PageHeader title={t("myfavorites")} />
-      <CharacterList characters={props.myFavorites} />
+      <CharacterList characters={myFavorites} />
     </Layout>
   );
 };
