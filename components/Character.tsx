@@ -16,6 +16,12 @@ const StyledCharacterCard = styled(Card)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #121212 !important;
+    color: #fff !important;
+
+    &:hover {
+      background-color: #333333 !important;
+    }
   }
 `;
 
