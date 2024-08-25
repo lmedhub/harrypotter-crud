@@ -27,5 +27,5 @@
     "**/*.ts",
     "**/*.tsx"
 , "dialogflow.js"    
-, "cypress/support/commands.js"  ]
+, "cypress/support/commands.js", "cypress/e2e/characterFlow.cy.js"  ]
 }

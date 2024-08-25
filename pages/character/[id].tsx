@@ -146,6 +146,7 @@ const CharacterPage: React.FC<Props> = (props) => {
               variant="contained"
               color="secondary"
               onClick={handleFavoriteToggle}
+              id="fav-button"
             >
               {isFavorited ? t("unfavorite") : t("favorite")}
             </Button>
