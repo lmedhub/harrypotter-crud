@@ -10,16 +10,14 @@ const ErrorContainer = styled(Box)`
   height: 100vh;
 `;
 
-const ErrorText = styled(Typography)`
-  margin-bottom: 16px;
-`;
-
 const ErrorFallback: React.FC = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <ErrorContainer>
-      <ErrorText variant="h5">{t("somethingwrong")}</ErrorText>
+      <Typography sx={{ mb: "16px" }} variant="h5">
+        {t("somethingwrong")}
+      </Typography>
       <Typography variant="body1">{t("contactsupport")}</Typography>
     </ErrorContainer>
   );
