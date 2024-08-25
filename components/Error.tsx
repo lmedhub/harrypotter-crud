@@ -15,11 +15,11 @@ const ErrorText = styled(Typography)`
 `;
 
 const ErrorFallback: React.FC = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <ErrorContainer>
-      <ErrorText variant="h5">{t("somethingwrong")}</ErrorText>
+      <ErrorText sx={{mb: '16px'}} variant="h5">{t("somethingwrong")}</ErrorText>
       <Typography variant="body1">{t("contactsupport")}</Typography>
     </ErrorContainer>
   );

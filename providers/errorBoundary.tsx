@@ -8,17 +8,17 @@ export class ErrorBoundary extends React.Component<
   { fallback: React.ReactNode },
   ErrorBoundaryState
 > {
-  constructor(props) {
+  constructor(props: { fallback: React.ReactNode }) {
     super(props);
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(error: Error) {
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(_error: Error, info: React.ErrorInfo) {
     console.error(info.componentStack);
   }
 

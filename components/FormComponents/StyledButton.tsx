@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Button } from "@mui/material";
+import { Button, ButtonProps } from "@mui/material";
 import React from "react";
 
 const StyledButtonComponent = styled(Button)`
@@ -7,7 +7,14 @@ const StyledButtonComponent = styled(Button)`
   padding: 1rem 2rem;
 `;
 
-export default function StyledButton({ children, ...props }) {
+type StyledButtonProps = ButtonProps & {
+  children: React.ReactNode;
+};
+
+export default function StyledButton({
+  children,
+  ...props
+}: StyledButtonProps) {
   return (
     <StyledButtonComponent variant="contained" {...props}>
       {children}
