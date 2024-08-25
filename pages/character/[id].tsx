@@ -8,9 +8,9 @@ import { useTranslation } from "react-i18next";
 import PageHeader from "../../components/PageHeader";
 import Image from "next/image";
 import { styled } from "@mui/system";
-import { set } from "cypress/types/lodash";
 import { CharacterProps } from "../../types";
 import UnauthorizedPage from "../../components/Unauthorized";
+import { GetServerSidePropsContext } from "next";
 
 const CharacterContainer = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -31,12 +31,14 @@ const CharacterInfo = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   const { params } = context;
   const session = await getSession(context);
 
   const response = await fetch(
-    `https://hp-api.onrender.com/api/character/${params.id}`
+    `https://hp-api.onrender.com/api/character/${params?.id}`
   );
   const data = await response.json();
   const character = data[0];

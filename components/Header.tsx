@@ -19,7 +19,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import HouseSwitcher from "./HouseSwitcher";
 
-type House = "Gryffindor" | "Slytherin" | "Hufflepuff" | "Ravenclaw";
+export type House = "Gryffindor" | "Slytherin" | "Hufflepuff" | "Ravenclaw";
 
 const Header: React.FC = () => {
   const router = useRouter();
@@ -28,7 +28,7 @@ const Header: React.FC = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
-  const [preferredHouse, setPreferredHouse] = useState<House>();
+  const [preferredHouse, setPreferredHouse] = useState<House | null>(null);
 
   //The code to get values from local storage should only run on the client where the window object is defined.
   useEffect(() => {
@@ -52,7 +52,7 @@ const Header: React.FC = () => {
     setAnchorElUser(null);
   };
 
-  const appBarColor = (preferredHouse: string) => {
+  const appBarColor = (preferredHouse: string | null) => {
     switch (preferredHouse) {
       case "Gryffindor":
         return "error";
@@ -196,7 +196,10 @@ const Header: React.FC = () => {
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 {session ? (
-                  <Avatar alt={session.user.name} src={session.user.image} />
+                  <Avatar
+                    alt={session.user.name ?? ""}
+                    src={session.user.image ?? ""}
+                  />
                 ) : (
                   <Avatar alt="Profile" />
                 )}
