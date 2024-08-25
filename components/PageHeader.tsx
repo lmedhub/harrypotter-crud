@@ -21,7 +21,6 @@ type PageHeaderProps = {
   shouldNotBack?: boolean;
 };
 
-
 const PageHeader = ({ title, shouldNotBack }: PageHeaderProps) => {
   return (
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
