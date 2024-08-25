@@ -1,0 +1,52 @@
+{
+  "mycharacters": "Foretrukne karakterer",
+  "myfavorites": "Mine favoritter",
+  "allcharacters": "Alle karakterer",
+  "harrycharacters": "Harry Potter karakterer",
+  "students": "Elever",
+  "staff": "Personale",
+  
+  "name": "Navn",
+  "house": "Hus",
+  "species": "Art",
+  "dateOfBirth": "Fødselsdato",
+  "actor": "Skuespiller",
+  "patronus": "Patronus",
+  "ancestry": "Anetavle",
+  "alive": "I live",
+  
+  "unknown": "Ukendt",
+
+  "delete": "Slet",
+  "edit": "Rediger",
+  "favorite": "Favorit",
+  "unfavorite": "Fjern favorit",
+
+  "cancel": "Annuller",
+  "characterdetails": "Karakter detaljer",
+  
+  "help": "Hjælp",
+
+  "language": "Engelsk",
+  "languageButton": "Sprog",
+  "selectLanguage": "Vælg sprog",
+  "changethemebutton": "Skift tema",
+
+  "favhouse": "Foretrukne hus",
+  "selectHouse": "Vælg hus",
+
+  "somethingwrong": "Noget gik galt",
+  "contactsupport": "Kontakt venligst support",
+  
+  "unauthorized": "Uautoriseret adgang",
+  "needauth": "Du har ikke tilladelse til at få adgang til denne side.",
+  "backbutton": "Gå tilbage",
+
+  "characterstats": "Karakter statistik",
+  "housecounts": "Hustælling",
+  "statsbutton": "Statistik",
+
+  "nodatadisplay": "Der er intet at vise i øjeblikket.",
+  "nodata": "Ingen elementer tilgængelige",
+  "noimage": "Ingen billede tilgængeligt"
+}
