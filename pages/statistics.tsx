@@ -9,7 +9,8 @@ import {
   ArcElement,
 } from "chart.js";
 import Layout from "../components/Layout";
-import { Box, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import PageHeader from "../components/PageHeader";
 import UnauthorizedPage from "../components/Unauthorized";
 import { getSession, GetSessionParams } from "next-auth/react";

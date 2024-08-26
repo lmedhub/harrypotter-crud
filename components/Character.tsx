@@ -1,6 +1,8 @@
 import React from "react";
 import Router from "next/router";
-import { Box, Card, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
 import styled from "@emotion/styled";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";

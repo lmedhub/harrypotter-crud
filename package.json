@@ -8,6 +8,7 @@
     "start": "next start",
     "postinstall": "prisma generate",
     "lint": "next lint",
+    "lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
@@ -43,6 +44,7 @@
     "cypress": "^13.6.2",
     "eslint": "^7.32.0",
     "eslint-config-next": "14.0.4",
+    "eslint-plugin-mui-path-imports": "^0.0.15",
     "prisma": "^5.7.1",
     "typescript": "5.2.2"
   }

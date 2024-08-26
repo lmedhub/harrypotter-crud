@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
-import {
-  Typography,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
-  Box,
-} from "@mui/material";
+import Typography from "@mui/material/Typography";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Radio from "@mui/material/Radio";
+import Box from "@mui/material/Box";
 import { getSession, GetSessionParams } from "next-auth/react";
 import UnauthorizedPage from "../components/Unauthorized";
 import { Session } from "next-auth";
