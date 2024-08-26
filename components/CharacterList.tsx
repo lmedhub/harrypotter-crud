@@ -1,4 +1,6 @@
-import { Card, Grid, Typography } from "@mui/material";
+import Card from "@mui/material/Card";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import React from "react";
 import styled from "@emotion/styled";
 import Character from "./Character";

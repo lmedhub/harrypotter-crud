@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import { Button, ButtonProps } from "@mui/material";
+import Button from "@mui/material/Button";
+import { ButtonProps } from "@mui/material";
 import React from "react";
 
 const StyledButtonComponent = styled(Button)`

@@ -13,7 +13,7 @@ import Container from "@mui/material/Container";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useSession, signOut } from "next-auth/react";
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";

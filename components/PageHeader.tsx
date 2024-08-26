@@ -1,9 +1,10 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/system";
-import { Box, IconButton } from "@mui/material";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
 import Router from "next/router";
-import { ArrowBack } from "@mui/icons-material";
+import ArrowBack from "@mui/icons-material/ArrowBack";
 
 const StyledPageHeader = styled(Typography)`
   font-weight: bold;
