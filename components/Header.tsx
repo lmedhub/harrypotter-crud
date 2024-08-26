@@ -89,7 +89,7 @@ const Header: React.FC = () => {
             Harry Protter
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }} component="nav">
             <IconButton
               size="large"
               onClick={handleOpenNavMenu}
@@ -169,6 +169,7 @@ const Header: React.FC = () => {
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
             }}
+            component="nav"
           >
             <Link href={"/allcharacters"}>
               <Button color="secondary">{t("allcharacters")}</Button>

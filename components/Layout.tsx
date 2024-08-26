@@ -45,7 +45,7 @@ function Layout(props: Props) {
           <CssBaseline />
 
           <Header />
-          <Container maxWidth="xl" sx={{ padding: "1rem" }}>
+          <Container maxWidth="xl" sx={{ padding: "1rem" }} component="main">
             {props.children}
           </Container>
         </ThemeProvider>
