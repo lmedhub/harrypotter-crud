@@ -2,7 +2,7 @@ describe("User flow", () => {
   it("User has active session", () => {
     cy.setCookie(
       "next-auth.session-token",
-      "b3b05b40-90eb-4e7b-88b8-03a42e1c28a1"
+      "83cc1100-df30-41b8-87e3-61be66d89d70"
     );
 
     cy.visit("/allcharacters");
