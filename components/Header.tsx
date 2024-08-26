@@ -68,7 +68,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <AppBar position="static" color={appBarColor(preferredHouse)}>
+    <AppBar position="static" color={appBarColor(preferredHouse)} component="header">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
